@@ -84,30 +84,35 @@ export default function Home() {
         <div className="section-card">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-semibold">More Than Machines</h3>
-              <p className="text-gray-700 mt-2 max-w-prose">Sales, repairs, servicing and maintenance — everything to keep you sewing.</p>
+              <div className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">SERVICES</div>
+              <h3 className="mt-3 text-3xl font-bold text-primary-dark">More Than Machines</h3>
+              <p className="text-gray-700 mt-3 max-w-prose leading-7">Sales, repairs, servicing and maintenance — everything to keep you sewing.</p>
 
               <div className="mt-6 grid sm:grid-cols-2 gap-4">
                 <div className="service-card">
+                  <span className="service-icon">01</span>
                   <h5 className="font-semibold">Sales</h5>
                   <p className="text-sm text-gray-600">In-store demos and expert advice.</p>
                 </div>
                 <div className="service-card">
+                  <span className="service-icon">02</span>
                   <h5 className="font-semibold">Repair</h5>
                   <p className="text-sm text-gray-600">Fast, reliable service using genuine parts.</p>
                 </div>
                 <div className="service-card">
+                  <span className="service-icon">03</span>
                   <h5 className="font-semibold">Servicing</h5>
                   <p className="text-sm text-gray-600">Scheduled maintenance and tune-ups.</p>
                 </div>
                 <div className="service-card">
+                  <span className="service-icon">04</span>
                   <h5 className="font-semibold">Installation</h5>
                   <p className="text-sm text-gray-600">On-site setup and training.</p>
                 </div>
               </div>
             </div>
 
-            <div className="image-holder" style={{height:300}}>Services image</div>
+            <div className="image-holder" style={{height:300, borderRadius:'1rem'}}>Services image</div>
           </div>
         </div>
       </section>
@@ -115,15 +120,15 @@ export default function Home() {
       {/* WHY CHOOSE US (soft cyan) */}
       <section className="section-soft-cyan mt-16 py-12">
         <div className="page-container grid md:grid-cols-2 gap-8 items-center">
-          <div className="image-holder" style={{height:340}}>Why choose us image</div>
+          <div className="image-holder" style={{height:340, borderRadius:'1rem'}}>Why choose us image</div>
           <div>
-            <div className="text-xs font-semibold uppercase tracking-wide text-primary">WHY PRAVEEN SEWING MACHINES</div>
+            <div className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">WHY PRAVEEN SEWING MACHINES</div>
             <h3 className="mt-3 text-3xl font-bold text-primary-dark">Everything You Need to Keep Sewing.</h3>
-            <ul className="mt-4 space-y-3 text-gray-700 max-w-prose">
-              <li><strong>Quality equipment</strong> — Trusted manufacturers.</li>
-              <li><strong>Professional assistance</strong> — Demonstrations and guidance.</li>
-              <li><strong>Reliable service</strong> — Skilled repairs and maintenance.</li>
-              <li><strong>Genuine parts</strong> — Original spares for longevity.</li>
+            <ul className="mt-5 space-y-3 text-gray-700 max-w-prose">
+              <li className="benefit-row"><span className="benefit-bullet">1</span><div><strong>Quality equipment</strong> — Trusted manufacturers.</div></li>
+              <li className="benefit-row"><span className="benefit-bullet">2</span><div><strong>Professional assistance</strong> — Demonstrations and guidance.</div></li>
+              <li className="benefit-row"><span className="benefit-bullet">3</span><div><strong>Reliable service</strong> — Skilled repairs and maintenance.</div></li>
+              <li className="benefit-row"><span className="benefit-bullet">4</span><div><strong>Genuine parts</strong> — Original spares for longevity.</div></li>
             </ul>
           </div>
         </div>
@@ -133,12 +138,19 @@ export default function Home() {
       <section className="section-light-gray mt-16 py-12">
         <div className="page-container">
           <div className="section-card grid md:grid-cols-2 gap-6 items-center">
-            <div className="image-holder" style={{height:240}}>About image</div>
+            <div className="image-holder" style={{height:260, borderRadius:'1rem'}}>About image</div>
             <div>
-              <h3 className="text-2xl font-semibold">About</h3>
-              <p className="text-gray-700 mt-2 max-w-prose">A short introduction to the business. Replace this with the real about copy when available.</p>
-              <div className="mt-4">
-                <Link to="/about" className="btn-outline">Learn more</Link>
+              <div className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">ABOUT US</div>
+              <h3 className="mt-3 text-3xl font-bold text-primary-dark">Quality machines and dependable support.</h3>
+              <p className="text-gray-700 mt-3 max-w-prose leading-7">
+                Praveen Sewing Machines is dedicated to providing quality sewing machines and reliable service solutions for a wide range of sewing needs.
+              </p>
+              <p className="text-gray-700 mt-3 max-w-prose leading-7">
+                From helping customers choose the right machine to servicing and maintenance, our focus is on delivering dependable equipment and helpful support.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link to="/about" className="btn-primary">About Us</Link>
+                <Link to="/contact" className="btn-outline">Contact</Link>
               </div>
             </div>
           </div>
@@ -147,8 +159,14 @@ export default function Home() {
 
       {/* GALLERY */}
       <section className="page-container mt-16">
-        <h3 className="text-2xl font-semibold">Gallery</h3>
-        <div className="mt-6 gallery-grid">
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">GALLERY</div>
+            <h3 className="mt-2 text-3xl font-bold text-primary-dark">Recent Work & Store Moments</h3>
+          </div>
+          <Link to="/gallery" className="btn-outline">View Gallery</Link>
+        </div>
+        <div className="gallery-grid">
           <div className="gallery-item g-large">Large</div>
           <div className="gallery-item">Small</div>
           <div className="gallery-item g-vertical">Vertical</div>
@@ -156,7 +174,6 @@ export default function Home() {
           <div className="gallery-item">Small</div>
           <div className="gallery-item">Small</div>
         </div>
-        <div className="mt-6"><Link to="/gallery" className="btn-outline">View Gallery</Link></div>
       </section>
 
       {/* CONTACT CTA (dark) */}
@@ -167,7 +184,7 @@ export default function Home() {
               <h3 className="text-2xl md:text-3xl font-bold">Need the Right Sewing Machine?</h3>
               <p className="mt-2 text-cyan-100">Talk to our experts today — get a recommendation and on-site demo.</p>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a href={`tel:${SITE.phone}`} className="btn-primary">Call Now</a>
               <a href={SITE.whatsapp ? `https://wa.me/${SITE.whatsapp}` : '#'} className="btn-outline-light">WhatsApp Us</a>
               <a href="/contact" className="btn-outline-light">Get Directions</a>
