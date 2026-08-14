@@ -8,11 +8,11 @@ export default function BrandCard({ name, logo }) {
   return (
     <div className="flex flex-col items-center gap-2">
       {logo ? (
-        <img src={logo} alt={name} className="w-24 h-24 object-contain" loading="lazy" decoding="async" />
+        <div className="brand-logo"><img src={logo} alt={name} className="max-w-full max-h-full object-contain" loading="lazy" decoding="async" /></div>
       ) : (
-        <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-lg font-semibold">{initials(name)}</div>
+        <div className="brand-logo flex items-center justify-center text-gray-600 font-semibold">{initials(name)}</div>
       )}
-      <div className="text-sm font-medium">{name}</div>
+      <div className="text-sm font-medium mt-2">{name}</div>
     </div>
   )
 }

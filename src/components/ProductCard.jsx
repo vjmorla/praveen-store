@@ -1,23 +1,28 @@
 import React from 'react'
 import { SITE } from '../data/siteConfig'
 
-export default function ProductCard({ image, name, brand, description }) {
+export default function ProductCard({ image, name, brand, description, onQuickView }) {
   return (
-    <article className="bg-white rounded-xl shadow-md overflow-hidden transform transition hover:-translate-y-1 hover:shadow-lg">
-      <div className="relative h-48 bg-gray-100">
-        {image ? (
-          <img src={image} alt={name} className="w-full h-full object-cover" loading="lazy" decoding="async" />
-        ) : (
-          <img src="/src/assets/product-placeholder.svg" alt="placeholder" loading="lazy" decoding="async" className="w-full h-full object-cover" />
-        )}
-        <div className="absolute left-3 top-3 px-2 py-1 bg-white/90 text-xs font-medium rounded-full text-sky-800">{brand || 'Brand'}</div>
+    <article className="bg-white rounded-xl overflow-hidden transform transition hover:-translate-y-2 hover:shadow-2xl">
+      <div className="relative">
+        <div className="feature-image">
+          <div className="feature-image-inner h-56 bg-gray-50 flex items-center justify-center">
+            {image ? (
+              <img src={image} alt={name} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-gray-400">Product image</div>
+            )}
+          </div>
+        </div>
+        <div className="absolute left-4 top-4 px-3 py-1 bg-white rounded-full text-sm font-semibold text-sky-700 shadow">{brand || 'Brand'}</div>
       </div>
-      <div className="p-4">
-        <h3 className="font-semibold text-sky-900">{name || 'Product name'}</h3>
-        <p className="mt-2 text-sm text-gray-600">{description || 'Short product description.'}</p>
-        <div className="mt-4 flex items-center gap-3">
-          <a href={`tel:${SITE.phone}`} className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded shadow">Enquire</a>
-          <a href="/contact" className="text-sm text-gray-600">More details</a>
+
+      <div className="p-5">
+        <h3 className="font-semibold text-xl text-sky-900">{name || 'Product name'}</h3>
+        <p className="mt-2 text-gray-600">{description || 'Short product description.'}</p>
+        <div className="mt-5 flex items-center gap-3">
+          <button onClick={() => onQuickView && onQuickView()} className="btn-primary">Quick view</button>
+          <a href={`tel:${SITE.phone}`} className="btn-outline">Enquire</a>
         </div>
       </div>
     </article>
